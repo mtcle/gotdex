@@ -53,7 +53,6 @@ public class Main implements IXposedHookLoadPackage, IXposedHookZygoteInit {
         xSharedPreferences.reload();
         initRefect();
         packagename = xSharedPreferences.getString("packagename", null);
-//        packagename="com.app";//足球教学
         Log.e(TAG, "需要hook的包名：" + packagename);
         if ((!loadPackageParam.packageName.equals(packagename))||packagename == null) {
             XposedBridge.log("hook 包名为空,或者不一致，不处理");
